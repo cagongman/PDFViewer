@@ -2,6 +2,8 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_CM_PDFViewerMain.h"
+#include <QtPdfWidgets/QPdfView>
+#include <QtPdf/QPdfDocument>
 
 class CM_PDFViewerMain : public QMainWindow
 {
@@ -13,4 +15,10 @@ public:
 
 private:
     Ui::CM_PDFViewerMainClass ui;
+
+    QPdfDocument* m_pdfDocument;
+    QPdfView* m_pdfView;
+
+private slots:
+    void openPdfFile();
 };
