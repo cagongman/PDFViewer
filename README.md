@@ -1,1 +1,1 @@
-# SimplePDFViewer
+# PDFViewer for developer
