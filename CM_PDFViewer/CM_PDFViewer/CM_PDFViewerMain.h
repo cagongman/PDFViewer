@@ -31,4 +31,5 @@ private slots:
     void actionOpenPdfFile();
     void actionPreviousPage();
     void actionNextPage();
+    void updatePageLabel();
 };

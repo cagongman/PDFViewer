@@ -33,21 +33,23 @@ CM_PDFViewerMain::CM_PDFViewerMain(QWidget* parent)
 
     auto nav = m_pdfView->pageNavigator();
 
-    /*connect(m_prevPageBtn, &QPushButton::clicked, this, [this]() {
+    connect(m_prevPageBtn, &QPushButton::clicked, this, [this]() {
+        if (!m_pdfDocument) return;
         if (m_currentPage > 0) {
             m_currentPage--;
-            m_pdfView->setPage(m_currentPage);
+            m_pdfView->pageNavigator()->jump(m_currentPage, QPointF(0, 0));
             updatePageLabel();
         }
-        });
+    });
 
     connect(m_nextPageBtn, &QPushButton::clicked, this, [this]() {
+        if (!m_pdfDocument) return;
         if (m_currentPage < m_pdfDocument->pageCount() - 1) {
             m_currentPage++;
-            m_pdfView->setPage(m_currentPage);
+            m_pdfView->pageNavigator()->jump(m_currentPage, QPointF(0, 0));
             updatePageLabel();
         }
-        });*/
+    });
 
     QMenu* fileMenu = menuBar()->addMenu(tr("file"));
     QAction* openAction = new QAction(tr("open..."), this);
@@ -78,6 +80,12 @@ void CM_PDFViewerMain::actionPreviousPage() {
 
 void CM_PDFViewerMain::actionNextPage() {
 
+}
+
+void CM_PDFViewerMain::updatePageLabel() {
+    if (!m_pdfDocument || m_pdfDocument->pageCount() == 0)
+        return;
+    m_pageLabel->setText(QString("Page %1 / %2").arg(m_currentPage + 1).arg(m_pdfDocument->pageCount()));
 }
 
 CM_PDFViewerMain::~CM_PDFViewerMain()
