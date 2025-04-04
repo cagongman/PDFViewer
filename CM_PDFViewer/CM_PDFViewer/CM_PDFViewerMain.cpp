@@ -65,13 +65,6 @@ void CM_PDFViewerMain::actionOpenPdfFile() {
         return;
 
     m_pdfDocument->load(filePath);
-
-    int pageCount = m_pdfDocument->pageCount();
-    for (int i = 0; i < pageCount; ++i) {
-        QImage image = m_pdfDocument->render(i, QSize(800, 1200));
-        QLabel* label = new QLabel;
-        label->setPixmap(QPixmap::fromImage(image));
-    }
 }
 
 void CM_PDFViewerMain::actionPreviousPage() {
