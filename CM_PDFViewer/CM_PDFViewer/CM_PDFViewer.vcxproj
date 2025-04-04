@@ -72,6 +72,15 @@
       <AdditionalIncludeDirectories>C:\Qt6\6.8.2\msvc2022_64\include\QtPdf;C:\Qt6\6.8.2\msvc2022_64\include\QtPdfWidgets;C:\Qt6\6.8.2\msvc2022_64\include\QtPdfQuick;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Qt6\6.8.2\msvc2022_64\include;C:\Qt6\6.8.2\msvc2022_64\include\QtPdf;C:\Qt6\6.8.2\msvc2022_64\include\QtPdfWidgets</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Qt6PdfWidgetsd.lib;Qt6Pdfd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Qt6\6.8.2\msvc2022_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
