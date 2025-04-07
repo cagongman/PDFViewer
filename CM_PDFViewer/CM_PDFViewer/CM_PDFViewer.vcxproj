@@ -113,8 +113,12 @@
     <QtRcc Include="CM_PDFViewerMain.qrc" />
     <QtUic Include="CM_PDFViewerMain.ui" />
     <QtMoc Include="CM_PDFViewerMain.h" />
+    <ClCompile Include="Book.cpp" />
     <ClCompile Include="CM_PDFViewerMain.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Book.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
