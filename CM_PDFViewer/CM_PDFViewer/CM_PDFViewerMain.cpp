@@ -65,6 +65,7 @@ void CM_PDFViewerMain::actionOpenPdfFile() {
         return;
 
     m_pdfDocument->load(filePath);
+    m_pdfView->setZoomMode(QPdfView::ZoomMode::FitToWidth);
 }
 
 void CM_PDFViewerMain::actionPreviousPage() {
